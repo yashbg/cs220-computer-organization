@@ -1,0 +1,57 @@
+.data
+arr: .float 0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434, 0.1126, 0.554, 0.3349, 0.678
+array_size: .word 10
+matrix:	.float 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+n:   .float 5.0
+bucket: .space 20
+minval: .float 0.0
+maxval: .float 1.0
+on: .word 1
+
+.text
+	main:
+		
+		
+		la $t0, arr
+		l.s $f0, minval
+		l.s $f2, maxval
+		li $t1, 0
+		li $t2, 0
+	loop1:
+		lwc1 $f4, $t1($t0)
+		addi $t2, $t2, 1
+		c.lt.s $f4, $f0
+		bc1t update1
+		addi $t1, $t1, 4
+		bne $t2, 10, loop1 
+	
+	update1:
+		lwc1 $f0, $t1($t0)
+		addi $t1, $t1, 4
+		j loop1
+		
+	li $t1, 0
+	li $t2, 0
+	
+	loop2:
+		lwc1 $f4, $t1($t0)
+		addi $t2, $t2, 1
+		c.lt.s $f2, $f4
+		bc1t update2
+		addi $t2, $t2, 1
+		bne $t2, 10, loop1 
+	
+	update2:
+		lwc1 $f2, $t1($t0)
+		addi $t1, $t1, 4
+		j loop2
+
+	
+	li $v0, 10
+	syscall
+		
+		
+
+	
+		
+	
