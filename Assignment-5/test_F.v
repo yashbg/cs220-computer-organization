@@ -1,4 +1,3 @@
-`include "veda.v"
 module test;
 reg sign1,sign2;
 reg[7:0] exp1,exp2;
@@ -8,8 +7,6 @@ wire[7:0] exp_out;
 wire[22:0] frac_out;
 fp_adder uut (sign1,sign2,exp1,exp2,frac1,frac2,sign_out,exp_out,frac_out);
 initial begin
-    $dumpfile("test_F.vcd");
-    $dumpvars(0,test_F);
     {sign1,exp1,frac1}=32'b01000001001101100000000000000001;
     {sign2,exp2,frac2}=32'b01000000101100100000010000011011;
     // sign1=0;

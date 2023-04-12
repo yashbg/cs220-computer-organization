@@ -1,4 +1,3 @@
-
 `include "veda.v"
 module tb;
 
