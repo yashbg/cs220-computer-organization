@@ -1,12 +1,12 @@
 module ALU(
   input [31:0] Data1,
   input [31:0] Data2,
-  input [15:0] Immediate_Branch,
+  input [31:0] Instruction,
   input [3:0] Opcode_ALU,
   output reg [31:0] Result
 );
-  // wire [15:0] Immediate;            // We will need this in case of I-type operations
-  // assign Immediate= Instruction[15:0];
+  wire [15:0] Immediate_Branch;            // We will need this in case of I-type operations
+  assign Immediate_Branch= Instruction[15:0];
 
 
   always @(*) begin

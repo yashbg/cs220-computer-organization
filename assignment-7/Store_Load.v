@@ -3,13 +3,13 @@ module Store_Load(
   input [9:0] PC, 
   input [31:0] Data_Value,
   input [31:0] Address,
-  input [15:0] Offset,
+  input [31:0] Instruction,
   input Opcode_Data,
   output reg [31:0] Dataout
 );
 
-  // wire [15:0] Offset;
-  // assign Offset= Instruction[15:0];
+  wire [15:0] Offset;
+  assign Offset= Instruction[15:0];
 
 // wire [31:0] Data1, Data2;
 // assign Data1= Register[Instruction[25:21]];
