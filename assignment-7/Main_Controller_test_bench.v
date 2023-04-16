@@ -1,3 +1,7 @@
+
+// Amrit kumar --190122
+// Yash Gupta ---190997
+
 `include "Main_Controller.v"
 `timescale 1ps/1ps
 

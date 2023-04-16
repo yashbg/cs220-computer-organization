@@ -1,3 +1,7 @@
+// Amrit kumar --190122
+// Yash Gupta ---190997
+
+
 module Store_Load(
   input  reset,
   input [9:0] PC, 
@@ -22,7 +26,7 @@ module Store_Load(
 		for (i=0; i < 1024; i++) begin
       Data_Memory[i] = 0;
 		end
-    Data_Memory[0] = 32'd10;
+    Data_Memory[0] = 32'd20;
     Data_Memory[1] = 32'd5;
     Data_Memory[2] = 32'd2;
     Data_Memory[3] = 32'd7;
@@ -33,6 +37,16 @@ module Store_Load(
     Data_Memory[8] = 32'd0;
     Data_Memory[9] = 32'd12;
     Data_Memory[10] = 32'd3;
+    Data_Memory[11] = 32'd5;
+    Data_Memory[12] = 32'd2;
+    Data_Memory[13] = 32'd7;
+    Data_Memory[14] = 32'd11;
+    Data_Memory[15] = 32'd13;
+    Data_Memory[16] = 32'd24;
+    Data_Memory[17] = 32'd12;
+    Data_Memory[18] = 32'd17;
+    Data_Memory[19] = 32'd15;
+    Data_Memory[20] = 32'd4;
 	end
 
 
@@ -51,11 +65,6 @@ module Store_Load(
       end
 	  end
 
-    if(PC == 32'd24) begin
-      for(i=1; i<=Data_Memory[0]; i++) begin
-        $display("Data_Memory[%d] %d", i, Data_Memory[i]);
-      end
-    end
   end
 
 endmodule

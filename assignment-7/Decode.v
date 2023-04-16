@@ -1,3 +1,9 @@
+
+// Amrit kumar --190122
+// Yash Gupta ---190997
+
+
+
 // module Decode(
 //   input [5:0] opcode,func,
 //   output reg [3:0] Opcode_ALU, Opcode_Branch,   //stores opcode for alu and branch 
@@ -284,7 +290,7 @@ assign func= Instruction[5:0];
     end
 
     // I type instructions
-    
+
     else begin
       case(opcode)
         6'b001000: begin //addi8

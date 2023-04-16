@@ -1,3 +1,6 @@
+// Amrit kumar --190122
+// Yash Gupta ---190997
+
 module Get_Instruction(
 	input clk, reset,
 	input [9:0] PC,
