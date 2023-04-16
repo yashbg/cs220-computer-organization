@@ -23,13 +23,13 @@ inner_loop:
 
     add $t2, $s0, $s3                   # $t2 = arr + j
     lw $t3, 0($t2)                      # $t3 = arr[j]
-    lw $t4, 4($t2)                      # $t4 = arr[j + 1]
+    lw $t4, 1($t2)                      # $t4 = arr[j + 1]
 
     bleq $t3, $t4, update_inner_loop    # if arr[j] <= arr[j + 1], skip swap
 
 swap:
     sw $t4, 0($t2)                      # arr[j] = arr[j + 1]
-    sw $t3, 4($t2)                      # arr[j + 1] = arr[j]
+    sw $t3, 1($t2)                      # arr[j + 1] = arr[j]
 
 update_inner_loop:
     addi $s3, $s3, 1                    # j++
