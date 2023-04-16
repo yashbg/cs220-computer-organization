@@ -16,13 +16,12 @@ outer_loop:
     bgte $s2, $t0, end          # if i >= n - 1, end outer_loop
 
     li $s3, 0                           # $s3 = j (counter for inner_loop)
-    li $s5, 0                           # $s5 = j * 4
 
 inner_loop:
     addi $t1, $s1, -1                   # $t1 = n - 1
     bgte $s3, $t1, update_outer_loop    # if j >= n - 1, end inner_loop
 
-    add $t2, $s0, $s5                   # $t2 = arr + j
+    add $t2, $s0, $s3                   # $t2 = arr + j
     lw $t3, 0($t2)                      # $t3 = arr[j]
     lw $t4, 4($t2)                      # $t4 = arr[j + 1]
 
@@ -34,7 +33,6 @@ swap:
 
 update_inner_loop:
     addi $s3, $s3, 1                    # j++
-    addi $s5, $s5, 4                    # j * 4
     j inner_loop
 
 update_outer_loop:
